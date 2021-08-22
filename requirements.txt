@@ -1,0 +1,6 @@
+Eel
+numpy
+Pillow
+pip
+fpdf
+elasticsearch

@@ -1,0 +1,110 @@
+@keyframes opacity_animation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.content-hidden {
+  display: flex;
+  margin: auto;
+
+  .add-book-content {
+    width: max-content;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0,0,0,0.2);
+    padding: 35px;
+    animation: opacity_animation 1s ease-in-out;
+
+    .add-book-title {
+      color: #aab8c2;
+      font-size: 40px;
+      font-family: "Raleway ExtraBold";
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    #add-book-form {
+      display: flex;
+      flex-direction: column;
+      margin: 16px auto;
+
+      .input-book {
+        height: 52px;
+        border-radius: 6px;
+        margin: 16px auto 16px;
+        width: 415px;
+        outline: none;
+        background-color: #121212;
+        color: #999999;
+        font-size: 24px;
+        border: unset;
+        border: #4b4b4b solid 2px;
+        padding-left: 10px;
+      }
+
+      .files-add {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+
+        .label-text {
+          color: #cacaca;
+          flex: 1;
+          text-align: center;
+          background-color: #121212;
+          height: 35px;
+          border-radius: 18px;
+          max-width: 190px;
+          margin: 0 10px;
+          padding-top: 16px;
+
+          &:hover {
+            cursor: pointer;
+            opacity: 0.7;
+          }
+        }
+      }
+
+      .add-book-btn {
+        width: 200px;
+        height: 40px;
+        align-self: center;
+        background: dodgerblue;
+        border: unset;
+        border-radius: 30px;
+        font-size: 18px;
+        font-family: sans-serif;
+        margin-top: 20px;
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+
+.successful {
+  background: #27ff00;
+  text-align: center;
+  font-size: 36px;
+  padding: 20px;
+  font-family: monospace;
+  width: 350px;
+}
+
+.warn {
+  background: #ff4242;
+  text-align: center;
+  font-size: 36px;
+  padding: 20px;
+  font-family: monospace;
+  width: 350px;
+}

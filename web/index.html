@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Электронная библиотека</title>
+    <script type="text/javascript" src="/eel.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/page-add-book.css">
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/slick.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+</head>
+<body style="height: 100%">
+    <div class="flex-body">
+        <div class="menu">
+            <div class="hamburger-block">
+                <button class="hamburger-btn" onclick="move_menu()"></button>
+                <span class="hamburger"></span>
+            </div>
+            <div class="points-block">
+                <div class="cross-block">
+                    <span class="my-cross"></span>
+                    <button class="cross-btn" onclick="move_menu()"></button>
+                </div>
+                <div class="category-menu">
+                    <p id="category-name" onclick="move_menu(); start_books()">На главную</p>
+                </div>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="header">
+                <div class="header-logo">
+                    <a><img src="images/icon.png" alt="logo"></a>
+                </div>
+                <div class="search-block">
+                    <input autocomplete="off" class="query_search" id="search_query" name="search_query" placeholder="Введите запрос" type="search" onkeyup="search_book(event); debounceForData()">
+                    <div class="results hide">
+
+                        <div class="books hide">
+                            <p>Книги:</p>
+                        </div>
+
+                        <div class="authors hide">
+                            <p>Авторы:</p>
+                        </div>
+
+                    </div>
+                </div>
+                <button class="add-book" type="button" name="open-add_book-menu">
+                    <span id="plus" onclick="open_add_book()"></span>
+                </button>
+            </div>
+            <div class="header header_pdf" style="display: none">
+                <div class="header-logo">
+                    <a><img src="images/icon.png" alt="logo" ></a>
+                </div>
+                <div class="book-info"></div>
+                <img id="del-book" style="display: none" src="images/trash.png">
+                <input id="heart" type="checkbox">
+                <label for="heart">❤</label>
+                <a class="cross" onclick="close_pdf()"></a>
+            </div>
+
+            <div class="content" id="content-block"></div>
+            <div class="content content-hidden" style="display: none;"></div>
+
+            <div class="footer"></div>
+        </div>
+    </div>
+    <div class="load_block" style="display: none">
+        <img src="images/loading.gif" alt="loading">
+        <p id="load_text">Идёт загрузка контента</p>
+        <div class="background"></div>
+    </div>
+    <div class="content-blocker hide"></div>
+
+    <div class="add-book-page" style="display: none;">
+        <div class="content-hidden">
+            <div class="add-book-content">
+                <p class="add-book-title">Форма добавления книги</p>
+                <div id="add-book-form">
+                    <input class="input-book" id="title" type="text" placeholder="Введите название">
+                    <input class="input-book" id="author" type="text" placeholder="Введите имя автора">
+                    <select class="input-book" id="category">
+                        <option disabled selected>Выберите категорию</option>
+                    </select>
+                    <div class="files-add">
+                        <input type="file" id="text-file" style="display: none;" accept="text/*">
+                        <label for="text-file" id="text-file-label" class="label-text text-file">Выберите текст книги</label>
+
+                        <input type="file" id="cover-file" style="display: none;" accept="image/*">
+                        <label for="cover-file" id="cover-file-label" class="label-text cover-file">Выберите обложку</label>
+                    </div>
+                    <button class="add-book-btn" type="submit" onclick="add_book()">Добавить книгу</button>
+                </div>
+            </div>
+        </div>
+        <div class="background" onclick="close_add_book()"></div>
+    </div>
+
+</body>
+<script type="text/javascript" src="js/script.js"></script>
+</html>
