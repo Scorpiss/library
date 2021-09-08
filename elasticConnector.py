@@ -1,10 +1,11 @@
 from elasticsearch import Elasticsearch, exceptions
+import tkinter as tk
+from tkinter import messagebox
+from sys import exit
 from ast import literal_eval
 
 
 def show_warn(title, msg):
-    import tkinter as tk
-    from tkinter import messagebox
     tk.Tk().withdraw()
     tk.messagebox.showwarning(title, msg)
     exit()

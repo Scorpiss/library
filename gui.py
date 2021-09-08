@@ -8,6 +8,7 @@ from io import BytesIO
 import base64
 from mainElastic import Book, show_warn, get_all_categories
 from recommendation_ai.ai_rec import get_similarity, get_cosine_book
+from sys import exit
 
 db = Book()
 
@@ -276,3 +277,4 @@ if __name__ == '__main__':
     eel.browsers.set_path("chrome", os.path.abspath("chrome-win\\chrome.exe"))
     eel.start("index.html", options=options, suppress_error=True, cmdline_args=['--no-experiments', '--incognito'],
               disable_cache=True, close_callback=None)
+
